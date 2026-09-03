@@ -14,7 +14,7 @@
 - **离线合成**：`TXRealtimeTTSMode.Offline`，使用本地引擎，无需联网即可合成。
 - **流式文本输入**：通过 `appendText` 边输入边合成边播放。
 - **灵活的音频输出**：仅播放、仅回调 PCM 音频帧、播放并回调。
-- **实时控制**：停止 / 清空、音量调节。（暂停 / 恢复、语速调节暂未支持）
+- **实时控制**：停止 / 清空、音量与语速调节。（暂停 / 恢复暂未支持）
 - **生命周期**：`destroy()` 显式释放原生资源，移动端不应依赖 GC 回收；重复调用安全（幂等）。
 
 > 注意：`TXRealtimeTTSMode` 已支持 `Online`（在线）与 `Offline`（离线）；`Mix`（混合）仍为预留，暂未开放。
@@ -122,14 +122,14 @@ class TTSDemo {
     this.tts.start(params);
 
     // —— 离线模式 ——
-    // 离线模式须在 start 之前配置离线资源路径
+    // 离线模式须在 start 之前配置离线资源包（path 指向具体的 zip 文件）
     // this.tts.callExperimentalAPI(JSON.stringify({
     //   api: 'setOfflineCommonResourcePath',
-    //   params: { path: '/data/storage/tts/common' }
+    //   params: { path: '/data/storage/tts/tts_resource/common_resources_x.x.x.zip' }
     // }));
     // this.tts.callExperimentalAPI(JSON.stringify({
     //   api: 'setOfflineVoiceResourcePath',
-    //   params: { path: '/data/storage/tts/voice' }
+    //   params: { path: '/data/storage/tts/tts_resource/voice/voice_xxxxxx.zip' }
     // }));
     // const params = new TXRealtimeTTSParams();
     // params.mode = TXRealtimeTTSMode.Offline;
@@ -213,7 +213,7 @@ class TTSDemo {
 | `clear(): number` | 清空待播放与待合成文本；调用后立即丢弃所有排队文本，且不再触发 clear 前 `textId` 的进度回调。 |
 | `appendText(textId: string, text: string, isEnd?: boolean): number` | 流式追加待合成文本。`textId`：文本标识（UTF-8）；`text`：文本内容（UTF-8，必填）；`isEnd`：是否为本段最后一片，默认 `false`。 |
 | `setVolume(volume: number): number` | 设置音量，取值 `[0, 200]`，默认 `100` = 正常。 |
-| `setSpeed(speed: number): number` | 设置语速，取值 `[1, 3]`，默认 `1` = 正常。**（暂未支持）** |
+| `setSpeed(speed: number): number` | 设置语速，取值 `[1, 3]`，默认 `1` = 正常。 |
 | `callExperimentalAPI(jsonParams: string): string \| null` | 实验性 API 调用，入参为 JSON 字符串，返回 JSON 字符串。见[第六章](#六实验性-api)。 |
 
 ### 5.2 监听器 `ITXRealtimeTTSListener`
@@ -292,7 +292,7 @@ class TTSDemo {
 | `Ok` | 0 | 成功。 |
 | `InvalidState` | 1 | 状态不允许（如已处于 Started 状态时再次 Start）。 |
 | `InvalidParam` | 2 | 配置字段非法。 |
-| `NotImplement` | 3 | 功能尚未实现（如 pause/resume/setSpeed/在线模式等）。 |
+| `NotImplement` | 3 | 功能尚未实现（如 pause/resume/在线模式等）。 |
 | `OfflineUnknownError` | 100 | 未识别的离线引擎状态（防御性兜底）。 |
 | `OfflineInvalidState` | 101 | 离线引擎内部状态非法。 |
 | `OfflineResourceError` | 102 | 通用/音色资源加载失败。 |
@@ -310,7 +310,7 @@ class TTSDemo {
 
 ## 六、实验性 API
 
-`callExperimentalAPI(jsonParams: string)` 用于设置资源路径等可选项。**离线模式下 `setOfflineCommonResourcePath` 与 `setOfflineVoiceResourcePath` 为必需**，须在 `start` 之前调用；在线模式无需配置离线资源路径。入参为 JSON 字符串，格式：
+`callExperimentalAPI(jsonParams: string)` 用于设置离线资源包路径等可选项。**离线模式下 `setOfflineCommonResourcePath` 与 `setOfflineVoiceResourcePath` 为必需**，须在 `start` 之前调用；`path` 须指向具体的资源 zip 文件（而非解压后的目录），SDK 内部会自行解压。在线模式无需配置离线资源包。入参为 JSON 字符串，格式：
 
 ```json
 { "api": "<接口名>", "params": { ... } }
@@ -320,16 +320,15 @@ class TTSDemo {
 
 | api | params | 说明 |
 |---|---|---|
-| `setOfflineCommonResourcePath` | `{"path": "/path/to/common"}` | 设置离线通用资源路径。 |
-| `setOfflineVoiceResourcePath` | `{"path": "/path/to/voiceresource"}` | 设置离线音色资源路径。 |
-| `setTTSAudioDumpDir` | `{"path": "/path/to/dump"}` | 设置合成音频 WAV 落盘目录；`path` 为空则关闭落盘。 |
+| `setOfflineCommonResourcePath` | `{"path": "/path/to/common_resources_x.x.x.zip"}` | 设置离线通用资源包路径，`path` 须指向具体的 zip 文件（非目录）。 |
+| `setOfflineVoiceResourcePath` | `{"path": "/path/to/voice_xxxxxx.zip"}` | 设置离线音色资源包路径，`path` 须指向具体的 zip 文件（非目录）。 |
 
 示例：
 
 ```typescript
 const json = JSON.stringify({
   api: 'setOfflineCommonResourcePath',
-  params: { path: '/data/storage/tts/common' }
+  params: { path: '/data/storage/tts/tts_resource/common_resources_x.x.x.zip' }
 });
 this.tts?.callExperimentalAPI(json);
 ```
@@ -342,7 +341,7 @@ this.tts?.callExperimentalAPI(json);
 2. **音色必填**：`voiceName` 未设置会导致 `start` 返回 `InvalidParam`。
 3. **在线鉴权必填**：`Online` 模式须填 `online.appId` / `online.userId` / `online.userSig`；UserSig 无效会返回 `OnlineInvalidUserSig`。
 4. **离线鉴权必填**：`Offline` 模式须填 `offline.licenseUrl` 与 `offline.licenseKey`。
-5. **离线资源路径必配**：`Offline` 模式须在 `start` 之前通过实验性 API 配置好通用资源与音色资源路径；在线模式无需配置。
+5. **离线资源包必配**：`Offline` 模式须在 `start` 之前通过实验性 API 配置好通用资源包与音色资源包的 zip 文件路径（`path` 指向具体的 zip 文件，非解压后的目录）；在线模式无需配置。
 6. **流式结束标记**：一段文本输入完成后，最后一片须置 `isEnd = true`。
 7. **音频帧深拷贝**：`onSynthesizedAudioFrame` 中的 `pcmData` 仅在回调内有效，如需异步处理请立即 `slice()` 深拷贝。
 8. **监听器管理**：TTS 为单监听器模型，`setListener` 重复调用会覆盖上一次设置；如需取消监听请传入 `null`（`destroy()` 内部也会自动解绑）。
