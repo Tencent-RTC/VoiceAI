@@ -140,7 +140,7 @@ UserSig 是用户身份的加密凭证。**请勿在客户端硬编码密钥（S
     [self.tts appendText:@"text_1" text:@"你好，" isEnd:NO];
     [self.tts appendText:@"text_2" text:@"欢迎使用实时语音合成。" isEnd:NO];
 
-    // 5. 或者一次性追加文本
+    // 5. 或者一次性输入文本
     [self.tts appendText:@"text_1" text:@"你好，欢迎使用实时语音合成。" isEnd:YES];
 }
 

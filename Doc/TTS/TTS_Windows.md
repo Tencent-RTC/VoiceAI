@@ -143,11 +143,14 @@ void RunTTS() {
 
   // 5. 流式追加文本
   tts->appendText("text_1", "你好，", false);
-  tts->appendText("text_1", "欢迎使用实时语音合成。", true);
+  tts->appendText("text_2", "欢迎使用实时语音合成。", false);
+
+  // 6. 或者一次性输入文本
+  tts->appendText("text_1", "你好，欢迎使用实时语音合成。", true);
 
   // ... 播放结束后 ...
 
-  // 6. 停止并销毁
+  // 7. 停止并销毁
   tts->stop();
   tts->setListener(nullptr);
   TXRealtimeTTSDestroy(tts);

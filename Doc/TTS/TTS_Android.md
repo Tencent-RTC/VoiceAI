@@ -180,10 +180,10 @@ public class TTSDemo {
 
         // 4. 流式追加文本
         mTTS.appendText("text_1", "你好，", false);
-        mTTS.appendText("text_2", "欢迎使用实时语音合成。", false); // 流式输入
+        mTTS.appendText("text_2", "欢迎使用实时语音合成。", false);
 
         // 5. 或者一次性输入文本
-        mTTS.appendText("text_1", "你好，欢迎使用实时语音合成。", true); // 流式输入
+        mTTS.appendText("text_1", "你好，欢迎使用实时语音合成。", true);
     }
 
     public void release() {

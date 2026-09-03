@@ -15,7 +15,7 @@
 - **流式文本输入**：通过 `appendText` 边输入边合成边播放。
 - **灵活的音频输出**：仅播放、仅回调 PCM 音频帧、播放并回调。
 - **实时控制**：停止 / 清空、音量调节。（暂停 / 恢复、语速调节暂未支持）
-- **多监听器**：支持 `addListener` / `removeListener` 注册多个监听器。
+- **生命周期**：`destroy()` 显式释放原生资源，移动端不应依赖 GC 回收；重复调用安全（幂等）。
 
 > 注意：`TXRealtimeTTSMode` 已支持 `Online`（在线）与 `Offline`（离线）；`Mix`（混合）仍为预留，暂未开放。
 
@@ -107,8 +107,8 @@ class TTSDemo {
     // 1. 创建实例
     this.tts = new TXRealtimeTTS();
 
-    // 2. 添加监听器
-    this.tts.addListener(this.listener);
+    // 2. 设置回调监听器（单监听器，重复调用会覆盖上一次设置）
+    this.tts.setListener(this.listener);
 
     // 3. 配置参数并启动
     // —— 在线模式 ——
@@ -141,13 +141,16 @@ class TTSDemo {
 
     // 4. 流式追加文本
     this.tts.appendText('text_1', '你好，', false);
-    this.tts.appendText('text_1', '欢迎使用实时语音合成。', true);
+    this.tts.appendText('text_2', '欢迎使用实时语音合成。', false);
+
+    // 5. 或者一次性输入文本
+    this.tts.appendText('text_1', '你好，欢迎使用实时语音合成。', true);
   }
 
   release(): void {
     if (this.tts) {
       this.tts.stop();
-      this.tts.removeListener(this.listener);
+      this.tts.destroy(); // 内部会解绑监听器并释放 native 资源，调用后本实例不可再用
       this.tts = null;
     }
   }
@@ -171,28 +174,35 @@ class TTSDemo {
 - 在线模式的 `voiceName` 取值与官方音色清单中的「音色 ID」保持一致，请以文档最新清单为准。
 - 在线音色与离线模式使用的本地音色包相互独立，二者 ID 体系不同。
 
+---
+
 ## 五、API 参考
 
-### 4.1 类 `TXRealtimeTTS`
+### 5.1 类 `TXRealtimeTTS`
 
 #### 构造
 
 | 方法 | 说明 |
 |---|---|
-| `constructor()` | 创建新实例，构造函数内完成原生资源分配。 |
+| `constructor()` | 创建新实例，构造函数内完成原生资源分配，须配对调用 `destroy()` 释放。 |
 
-#### 监听器管理
-
-> 与其他平台不同，ArkTS 支持注册**多个**监听器。
+#### 销毁
 
 | 方法 | 说明 |
 |---|---|
-| `addListener(listener: ITXRealtimeTTSListener): void` | 添加回调监听器。 |
-| `removeListener(listener: ITXRealtimeTTSListener): void` | 移除之前添加的监听器。 |
+| `destroy(): void` | 显式销毁实例并释放原生资源（对齐其他平台的 `destroy`）。内部会先解绑监听器，调用后本实例不可再使用；重复调用安全（幂等）。移动端不应依赖 GC 回收原生资源，使用完毕（如页面 `aboutToDisappear`）务必调用。 |
+
+#### 监听器管理
+
+> TTS 采用**单监听器**模型，与 ASR 的 `addListener` / `removeListener` 多监听器模型不同。
+
+| 方法 | 说明 |
+|---|---|
+| `setListener(listener: ITXRealtimeTTSListener \| null): void` | 设置回调监听器，重复调用会覆盖上一次设置；传 `null` 取消监听。 |
 
 #### 核心方法
 
-除监听器管理外均返回 `number`，取值见 [`TXRealtimeTTSError`](#45-错误码-txrealtimettserror)。
+均返回 `number`（`callExperimentalAPI` 除外，返回 `string \| null`），取值见 [`TXRealtimeTTSError`](#55-错误码-txrealtimettserror)。
 
 | 方法 | 说明 |
 |---|---|
@@ -204,9 +214,9 @@ class TTSDemo {
 | `appendText(textId: string, text: string, isEnd?: boolean): number` | 流式追加待合成文本。`textId`：文本标识（UTF-8）；`text`：文本内容（UTF-8，必填）；`isEnd`：是否为本段最后一片，默认 `false`。 |
 | `setVolume(volume: number): number` | 设置音量，取值 `[0, 200]`，默认 `100` = 正常。 |
 | `setSpeed(speed: number): number` | 设置语速，取值 `[1, 3]`，默认 `1` = 正常。**（暂未支持）** |
-| `callExperimentalAPI(jsonParams: string): string \| null` | 实验性 API 调用，入参为 JSON 字符串，返回 JSON 字符串。见[第五章](#五实验性-api)。 |
+| `callExperimentalAPI(jsonParams: string): string \| null` | 实验性 API 调用，入参为 JSON 字符串，返回 JSON 字符串。见[第六章](#六实验性-api)。 |
 
-### 4.2 监听器 `ITXRealtimeTTSListener`
+### 5.2 监听器 `ITXRealtimeTTSListener`
 
 > 所有方法均为可选，按需实现。所有回调均已切换到 UI 线程触发，调用方无需关心线程安全。
 
@@ -217,7 +227,7 @@ class TTSDemo {
 | `onSynthesizedAudioFrame?(audioFrame: TXSynthesizeAudioFrame): void` | 合成音频帧回调。仅当 `audioOutputMode` 为 `CallbackOnly` 或 `PlaybackAndCallback` 时触发。 |
 | `onCompleted?(code: number, msg: string \| null): void` | 合成结束（成功或失败）。`code === Ok` 表示成功；否则表示任意阶段失败。`msg` 可为 `null`。 |
 
-### 4.3 参数与数据结构
+### 5.3 参数与数据结构
 
 #### `TXRealtimeTTSParams`
 
@@ -257,7 +267,7 @@ class TTSDemo {
 | `textSlice` | `string` | `undefined` | 当前合成数据所属的文本片段。 |
 | `progress` | `number` | 0 | `textSlice` 在 `textId` 文本段中的百分比 `[0.0, 1.0]`。 |
 
-### 4.4 枚举
+### 5.4 枚举
 
 #### `TXRealtimeTTSMode`（引擎模式）
 
@@ -275,7 +285,7 @@ class TTSDemo {
 | `CallbackOnly` | 1 | 仅回调音频帧，不播放。 |
 | `PlaybackAndCallback` | 2 | 既播放又回调音频帧。 |
 
-### 4.5 错误码 `TXRealtimeTTSError`
+### 5.5 错误码 `TXRealtimeTTSError`
 
 | 常量 | 值 | 说明 |
 |---|---|---|
@@ -335,4 +345,5 @@ this.tts?.callExperimentalAPI(json);
 5. **离线资源路径必配**：`Offline` 模式须在 `start` 之前通过实验性 API 配置好通用资源与音色资源路径；在线模式无需配置。
 6. **流式结束标记**：一段文本输入完成后，最后一片须置 `isEnd = true`。
 7. **音频帧深拷贝**：`onSynthesizedAudioFrame` 中的 `pcmData` 仅在回调内有效，如需异步处理请立即 `slice()` 深拷贝。
-8. **监听器管理**：注册的 `listener` 对象引用须保持稳定，`removeListener` 需传入 `addListener` 时的同一对象引用。
+8. **监听器管理**：TTS 为单监听器模型，`setListener` 重复调用会覆盖上一次设置；如需取消监听请传入 `null`（`destroy()` 内部也会自动解绑）。
+9. **生命周期**：原生资源在构造函数中分配，不依赖 GC 回收。不再使用时（如页面 `aboutToDisappear`）先 `stop()`、再 `destroy()`，避免资源泄漏；`destroy()` 后可重复调用，且实例不可再用。
