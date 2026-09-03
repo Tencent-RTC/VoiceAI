@@ -33,9 +33,36 @@
 
 ### 2.2 引入 SDK
 
-1. 将 SDK 提供的 `TXLiteAVSDK_VoiceAI_iOS.xcframework` 拖入工程，或通过 CocoaPods 引入。
-2. 在 `Target > General > Frameworks, Libraries, and Embedded Content` 中将 framework 设为 **Embed & Sign**。
-3. 导入头文件：
+将 VoiceAI TTS SDK 引入项目工程，支持以下两种方式：
+
+#### 方式一：CocoaPods 引入（推荐）
+
+在 `Podfile` 中声明依赖，然后执行 `pod install`：
+
+```ruby
+platform :ios, '11.0'  # iOS
+# platform :osx, '10.13'  # macOS
+
+target 'YourApp' do
+  # iOS
+  pod 'TXLiteAVSDK_VoiceAI_iOS', '13.5.0.223'
+
+  # macOS
+  # pod 'TXLiteAVSDK_VoiceAI_Mac', '13.5.0.223'
+end
+```
+
+#### 方式二：手动引入
+
+1. 下载 SDK 压缩包：
+   - iOS：[iOS SDK 下载](https://dl.gmertc.com/voiceai/13.5.0/VoiceAI_iOS_sdk_13.5.0.223.zip)
+   - macOS： [Mac SDK 下载](https://dl.gmertc.com/voiceai/13.5.0/VoiceAI_Mac_sdk_13.5.0.223.zip)
+2. 解压后将 `TXLiteAVSDK_VoiceAI_iOS.xcframework`（macOS 为 `TXLiteAVSDK_VoiceAI_Mac.xcframework`）拖入工程。
+3. 在 `Target > General > Frameworks, Libraries, and Embedded Content` 中将 framework 设为 **Embed & Sign**。
+
+#### 导入头文件
+
+两种方式均需导入头文件：
 
 ```objc
 #import "TXRealtimeTTS.h"

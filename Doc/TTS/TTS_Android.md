@@ -32,24 +32,57 @@
 
 ### 2.2 引入 SDK
 
-将 `liteav`语音 AI 动态库及Java API 引入工程：
+将 VoiceAI TTS SDK 引入项目工程，支持以下两种方式：
 
-1. 把 SDK 提供的 `LiteAVSDK_VoiceAI_x.x.x.x.aar`（或 `.so` + `jar`）放入 `app/libs`（`x.x.x.x` 为具体版本号）。
+#### 方式一：Maven 引入（推荐）
+
+在项目根目录的 `settings.gradle`（或 `build.gradle`）中确保已配置 Maven Central 仓库：
+
+```gradle
+repositories {
+    mavenCentral()
+}
+```
+
+在 `app/build.gradle` 中声明依赖（`x.x.x.x` 为具体版本号，比如 13.5.0.223，[SDK 插件地址](https://central.sonatype.com/artifact/com.tencent.liteav/LiteAVSDK_VoiceAI)）：
+
+```gradle
+dependencies {
+    implementation 'com.tencent.liteav:LiteAVSDK_VoiceAI:x.x.x.x'
+}
+```
+
+#### 方式二：本地 AAR 引入
+
+1. [下载 SDK](https://dl.gmertc.com/voiceai/13.5.0/VoiceAI_Android_sdk_13.5.0.223.zip)，把 SDK 提供的 `LiteAVSDK_VoiceAI_x.x.x.x.aar`（或 `.so` + `jar`）放入 `app/libs`（`x.x.x.x` 为具体版本号）。
 2. 在 `app/build.gradle` 中声明：
 
 ```gradle
-android {
-    defaultConfig {
-        ndk {
-            abiFilters "armeabi-v7a", "arm64-v8a"
-        }
-    }
-}
-
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
 }
 ```
+
+#### ABI 架构过滤（两种方式通用，推荐）
+
+SDK 的 AAR 内含多种架构的 `.so`，如不配置会默认将全部架构打进 APK，导致体积增大。建议在 `app/build.gradle` 中按需过滤：
+
+```gradle
+android {
+    defaultConfig {
+        // ...其他默认配置
+        ndk {
+            // 支持 armeabi-v7a 和 arm64-v8a 架构
+            abiFilters "armeabi-v7a", "arm64-v8a"
+        }
+    }
+}
+```
+
+> 说明：
+> - 现代真机基本只保留 `arm64-v8a`；如需兼容 32 位设备，可同时保留 `armeabi-v7a`。
+> - 若需在 x86 模拟器调试，可临时加入 `"x86_64"`。
+> - 使用 App Bundle（`splits.abi`）按架构分包时，无需再配置 `ndk.abiFilters`。
 
 API 入口类位于包 `com.tencent.voiceai`：
 
