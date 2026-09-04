@@ -9,6 +9,30 @@ VoiceAI 是 **TXLiteAVSDK** 中的实时语音 AI 能力集合，为应用提供
 
 ---
 
+## 平台支持
+
+| 平台 | 语言 | 产物 |
+|---|---|---|
+| Windows / 桌面 | C++ | 动态库 + 导入库 |
+| Android | Java | AAR |
+| iOS / macOS | Objective-C | Framework |
+| HarmonyOS | ArkTS | 共享库 + TS 封装 |
+
+## SDK 下载
+
+当前版本：`13.5.0.223`
+
+| 平台 | 更新时间 | 下载地址 | 文档指引 |
+|---|---|---|---|
+| Windows / 桌面（C++） | 2026-09-03 | [下载 ZIP](https://dl.gmertc.com/voiceai/13.5.0/VoiceAI_Win_sdk_13.5.0.223.zip) | [ASR 文档](Doc/ASR/ASR_Windows.md) <br> [TTS 文档](Doc/TTS/TTS_Windows.md) |
+| Android（Java） | 2026-09-03 | [Maven](https://central.sonatype.com/artifact/com.tencent.liteav/LiteAVSDK_VoiceAI)<br>[下载 ZIP](https://dl.gmertc.com/voiceai/13.5.0/VoiceAI_Android_sdk_13.5.0.223.zip) | [ASR 文档](Doc/ASR/ASR_Android.md) <br> [TTS 文档](Doc/TTS/TTS_Android.md) |
+| iOS / macOS（ObjC） | 2026-09-03 | iOS：[下载 ZIP](https://dl.gmertc.com/voiceai/13.5.0/VoiceAI_iOS_sdk_13.5.0.223.zip)<br>macOS：[下载 ZIP](https://dl.gmertc.com/voiceai/13.5.0/VoiceAI_Mac_sdk_13.5.0.223.zip) | [ASR 文档](Doc/ASR/ASR_iOS_macOS.md) <br> [TTS 文档](Doc/TTS/TTS_iOS_macOS.md) |
+| HarmonyOS（ArkTS） | 2026-09-03 | [OHPM](https://ohpm.openharmony.cn/#/cn/detail/@tencentcloud%2Fliteavsdk_voiceai)<br>[下载 ZIP](https://dl.gmertc.com/voiceai/13.5.0/VoiceAI_OHOS_sdk_13.5.0.223.zip) | [ASR 文档](Doc/ASR/ASR_HarmonyOS.md) <br> [TTS 文档](Doc/TTS/TTS_HarmonyOS.md) |
+
+> Android 与 HarmonyOS 推荐直接使用 Maven / ohpm 集成，无需下载 ZIP 包；ZIP 包内含 AAR / HAR、头文件与 Demo 工程，适合离线集成。
+
+---
+
 ## 能力一览
 
 ### 实时语音识别（ASR）
@@ -34,17 +58,6 @@ VoiceAI 是 **TXLiteAVSDK** 中的实时语音 AI 能力集合，为应用提供
 - `setLogCallback`：注册回调，实时捕获 SDK 日志
 
 一次配置对进程内所有 VoiceAI 能力生效。日志仅在本地落盘或通过回调抛给业务层，**不会主动上传云端**。
-
----
-
-## 平台支持
-
-| 平台 | 语言 | 产物 |
-|---|---|---|
-| Windows / 桌面 | C++ | 动态库 + 导入库 |
-| Android | Java | AAR |
-| iOS / macOS | Objective-C | Framework |
-| HarmonyOS | ArkTS | 共享库 + TS 封装 |
 
 ---
 
@@ -81,28 +94,7 @@ C++ 侧公共类型位于 `liteav` 命名空间下。识别与合成实例均通
 
 ---
 
-## 文档
-
-### 实时语音识别（ASR）
-
-| 平台 | 文档 |
-|---|---|
-| Windows / 桌面（C++） | [ASR_Windows.md](Doc/ASR/ASR_Windows.md) |
-| Android（Java） | [ASR_Android.md](Doc/ASR/ASR_Android.md) |
-| iOS / macOS（ObjC） | [ASR_iOS_macOS.md](Doc/ASR/ASR_iOS_macOS.md) |
-| HarmonyOS（ArkTS） | [ASR_HarmonyOS.md](Doc/ASR/ASR_HarmonyOS.md) |
-
-### 实时语音合成（TTS）
-
-| 平台 | 文档 |
-|---|---|
-| Windows / 桌面（C++） | [TTS_Windows.md](Doc/TTS/TTS_Windows.md) |
-| Android（Java） | [TTS_Android.md](Doc/TTS/TTS_Android.md) |
-| iOS / macOS（ObjC） | [TTS_iOS_macOS.md](Doc/TTS/TTS_iOS_macOS.md) |
-| HarmonyOS（ArkTS） | [TTS_HarmonyOS.md](Doc/TTS/TTS_HarmonyOS.md) |
-
-### 日志
-
+## 日志配置
 - [VoiceAI_Log.md](Doc/VoiceAI_Log.md) —— `TXVoiceAILog` 四平台使用文档
 
 ---
