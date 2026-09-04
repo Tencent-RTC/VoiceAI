@@ -40,7 +40,7 @@
 在工程根目录执行以下命令从 [ohpm 仓库](https://ohpm.openharmony.cn/#/cn/detail/@tencentcloud%2Fliteavsdk_voiceai) 添加依赖：
 
 ```shell
-ohpm install @tencentcloud/liteavsdk_voiceai
+ohpm install @tencentcloud/liteavsdk_voiceai@13.6.0.237
 ```
 
 或在 `oh-package.json5` 中声明依赖后执行同步：
@@ -48,7 +48,7 @@ ohpm install @tencentcloud/liteavsdk_voiceai
 ```json5
 {
   "dependencies": {
-    "@tencentcloud/liteavsdk_voiceai": "^x.x.x"
+    "@tencentcloud/liteavsdk_voiceai": "^13.6.0.237"
   }
 }
 ```

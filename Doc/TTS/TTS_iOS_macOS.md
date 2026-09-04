@@ -45,10 +45,10 @@ platform :ios, '11.0'  # iOS
 
 target 'YourApp' do
   # iOS
-  pod 'TXLiteAVSDK_VoiceAI_iOS', '13.5.0.223'
+  pod 'TXLiteAVSDK_VoiceAI_iOS', '13.6.0.237'
 
   # macOS
-  # pod 'TXLiteAVSDK_VoiceAI_Mac', '13.5.0.223'
+  # pod 'TXLiteAVSDK_VoiceAI_Mac', '13.6.0.237'
 end
 ```
 

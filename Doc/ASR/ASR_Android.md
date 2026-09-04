@@ -52,11 +52,11 @@ repositories {
 }
 ```
 
-在 `app/build.gradle` 中声明依赖（`x.x.x.x` 为具体版本号，比如 13.5.0.223，[SDK 插件地址](https://central.sonatype.com/artifact/com.tencent.liteav/LiteAVSDK_VoiceAI)）：
+在 `app/build.gradle` 中声明依赖（[SDK 插件地址](https://central.sonatype.com/artifact/com.tencent.liteav/LiteAVSDK_VoiceAI)，如需其它版本替换下方版本号即可）：
 
 ```gradle
 dependencies {
-    implementation 'com.tencent.liteav:LiteAVSDK_VoiceAI:x.x.x.x'
+    implementation 'com.tencent.liteav:LiteAVSDK_VoiceAI:13.6.0.237'
 }
 ```
 
