@@ -51,13 +51,28 @@ VoiceAI 是 **TXLiteAVSDK** 中的实时语音 AI 能力集合，为应用提供
 - 流式文本输入：边输入边合成边播放
 - 三种音频输出方式：仅播放、仅回调 PCM 数据、播放并回调
 
-### 统一日志配置（TXVoiceAILog）
+---
+
+## 日志配置
+
+`TXVoiceAILog` 是进程内所有 VoiceAI 能力的统一日志入口，提供三个静态接口：
 
 - `setLogLevel`：设置日志输出级别（默认关闭）
 - `setLogPath`：设置日志落盘目录
 - `setLogCallback`：注册回调，实时捕获 SDK 日志
 
 一次配置对进程内所有 VoiceAI 能力生效。日志仅在本地落盘或通过回调抛给业务层，**不会主动上传云端**。
+
+未调用 `setLogPath` 时使用以下默认落盘目录：
+
+| 平台 | 默认路径 |
+|---|---|
+| Windows | `%appdata%/voiceai/liteav/log` |
+| Android | `/sdcard/Android/data/<packageName>/files/voiceai/log/liteav/` |
+| iOS / macOS | `Documents/voiceai/log` |
+| HarmonyOS | `/data/app/el2/100/base/<bundleName>/files/voiceai/liteav/log/` |
+
+详细用法见 [VoiceAI_Log.md](Doc/VoiceAI_Log.md)。
 
 ---
 
@@ -91,11 +106,6 @@ C++ 侧公共类型位于 `liteav` 命名空间下。识别与合成实例均通
 ```
 
 > 日志配置必须早于任何其它 VoiceAI 接口调用，否则初始化阶段的日志会丢失。
-
----
-
-## 日志配置
-- [VoiceAI_Log.md](Doc/VoiceAI_Log.md) —— `TXVoiceAILog` 四平台使用文档
 
 ---
 

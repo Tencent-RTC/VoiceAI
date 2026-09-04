@@ -359,11 +359,12 @@ python decompress_clog.py ./voiceai_log
 
 | 平台 | 默认路径 |
 |---|---|
-| Windows | 当前用户的 AppData 目录 |
-| macOS | `~/Documents/log` |
-| iOS | 应用沙箱 `Documents/clogs` |
-| Android | `/storage/emulated/0/Android/data/<包名>/files/log/liteav` |
-| HarmonyOS | 应用沙箱日志目录 |
+| Windows | `%appdata%/voiceai/liteav/log` |
+| Android | `/sdcard/Android/data/<packageName>/files/voiceai/log/liteav/` |
+| iOS / macOS | `Documents/voiceai/log` |
+| HarmonyOS | `/data/app/el2/100/base/<bundleName>/files/voiceai/liteav/log/` |
+
+> `<packageName>` / `<bundleName>` 为应用的包名 / Bundle 名。
 
 > 曾调用过 `setLogPath` 的路径会被持久化记录，下次启动未设置时沿用上次设置（优先级：本次设置 > 上次设置 > 默认路径）。
 
