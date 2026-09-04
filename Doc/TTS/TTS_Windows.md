@@ -28,19 +28,21 @@
 |---|---|
 | 操作系统 | Windows 7 及以上（x86 / x64） |
 | 编译器 | 支持 C++14 的MSVC / Clang |
-| 依赖 | `TXLiteAVSDK` 动态库（`.dll` + `.lib` 导入库） |
+| 依赖 | `liteavsdk_voiceai` 动态库（`.dll` + `.lib` 导入库） |
 
 ### 2.2 引入 SDK
 
-1. 头文件：将 SDK 的 `include` 目录加入工程**附加包含目录**，引入：
+1. [下载 Windows SDK](https://dl.gmertc.com/voiceai/13.6.0/VoiceAI_Win_sdk_13.6.0.237.zip)，解压后得到头文件、`liteavsdk_voiceai.lib` 导入库与 `liteavsdk_voiceai.dll`。
+
+2. 头文件：将 SDK 的 `include` 目录加入工程**附加包含目录**，引入：
 
 ```cpp
 #include "tx_realtime_tts.h"
 ```
 
-2. 链接库：将 `TXLiteAVSDK.lib`（导入库）加入 **附加依赖项**，并确保运行时 `TXLiteAVSDK.dll` 位于可执行文件目录或系统 PATH。
+3. 链接库：将 `liteavsdk_voiceai.lib`（导入库）加入 **附加依赖项**，并确保运行时 `liteavsdk_voiceai.dll` 位于可执行文件目录或系统 PATH。
 
-3. 导出符号：API 通过 `LITEAVSDK_TTS_API` 导出，工程无需定义 `LITEAV_EXPORTS`（该宏仅 SDK 内部构建使用）。
+4. 导出符号：API 通过 `LITEAVSDK_TTS_API` 导出，工程无需定义 `LITEAV_EXPORTS`（该宏仅 SDK 内部构建使用）。
 
 ### 2.3 鉴权信息
 
