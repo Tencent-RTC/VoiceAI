@@ -40,7 +40,7 @@
 
 ### 2.3 引入 SDK
 
-1. [下载 Windows SDK](https://dl.gmertc.com/voiceai/13.5.0/VoiceAI_Win_sdk_13.5.0.223.zip)
+1. [下载 Windows SDK](https://dl.gmertc.com/voiceai/13.6.0/VoiceAI_Win_sdk_13.6.0.237.zip)
 1. 头文件：将 SDK 的 `include` 目录加入工程**附加包含目录**，引入：
 
 ```cpp

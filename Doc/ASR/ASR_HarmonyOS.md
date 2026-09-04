@@ -61,7 +61,7 @@ ohpm install @tencentcloud/liteavsdk_voiceai
 
 #### 方式二：本地 HAR 引入
 
-1. [下载 SDK](https://dl.gmertc.com/voiceai/13.5.0/VoiceAI_OHOS_sdk_13.5.0.223.zip)，将 SDK 提供的 HAR 包（LiteAVSDK_VoiceAI_x.x.x.x.har）加入工程依赖。
+1. [下载 SDK](https://dl.gmertc.com/voiceai/13.6.0/VoiceAI_OHOS_sdk_13.6.0.237.zip)，将 SDK 提供的 HAR 包（LiteAVSDK_VoiceAI_x.x.x.x.har）加入工程依赖。
 2. 在 `oh-package.json5` 中声明依赖后执行同步。
 
 #### 导入 API

@@ -55,8 +55,8 @@ end
 #### 方式二：手动引入
 
 1. 下载 SDK 压缩包：
-   - iOS：[iOS SDK 下载](https://dl.gmertc.com/voiceai/13.5.0/VoiceAI_iOS_sdk_13.5.0.223.zip)
-   - macOS： [Mac SDK 下载](https://dl.gmertc.com/voiceai/13.5.0/VoiceAI_Mac_sdk_13.5.0.223.zip)
+   - iOS：[iOS SDK 下载](https://dl.gmertc.com/voiceai/13.6.0/VoiceAI_iOS_sdk_13.6.0.237.zip)
+   - macOS： [Mac SDK 下载](https://dl.gmertc.com/voiceai/13.6.0/VoiceAI_Mac_sdk_13.6.0.237.zip)
 2. 解压后将 `TXLiteAVSDK_VoiceAI_iOS.xcframework`（macOS 为 `TXLiteAVSDK_VoiceAI_Mac.xcframework`）拖入工程。
 3. 在 `Target > General > Frameworks, Libraries, and Embedded Content` 中将 framework 设为 **Embed & Sign**。
 

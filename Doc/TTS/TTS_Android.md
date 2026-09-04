@@ -54,7 +54,7 @@ dependencies {
 
 #### 方式二：本地 AAR 引入
 
-1. [下载 SDK](https://dl.gmertc.com/voiceai/13.5.0/VoiceAI_Android_sdk_13.5.0.223.zip)，把 SDK 提供的 `LiteAVSDK_VoiceAI_x.x.x.x.aar`（或 `.so` + `jar`）放入 `app/libs`（`x.x.x.x` 为具体版本号）。
+1. [下载 SDK](https://dl.gmertc.com/voiceai/13.6.0/VoiceAI_Android_sdk_13.6.0.237.zip)，把 SDK 提供的 `LiteAVSDK_VoiceAI_x.x.x.x.aar`（或 `.so` + `jar`）放入 `app/libs`（`x.x.x.x` 为具体版本号）。
 2. 在 `app/build.gradle` 中声明：
 
 ```gradle

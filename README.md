@@ -20,14 +20,14 @@ VoiceAI 是 **TXLiteAVSDK** 中的实时语音 AI 能力集合，为应用提供
 
 ## SDK 下载
 
-当前版本：`13.5.0.223`
+当前版本：`13.6.0.237`
 
 | 平台 | 更新时间 | 下载地址 | 文档指引 |
 |---|---|---|---|
-| Windows / 桌面（C++） | 2026-09-03 | [下载 ZIP](https://dl.gmertc.com/voiceai/13.5.0/VoiceAI_Win_sdk_13.5.0.223.zip) | [ASR 文档](Doc/ASR/ASR_Windows.md) <br> [TTS 文档](Doc/TTS/TTS_Windows.md) |
-| Android（Java） | 2026-09-03 | [Maven](https://central.sonatype.com/artifact/com.tencent.liteav/LiteAVSDK_VoiceAI)<br>[下载 ZIP](https://dl.gmertc.com/voiceai/13.5.0/VoiceAI_Android_sdk_13.5.0.223.zip) | [ASR 文档](Doc/ASR/ASR_Android.md) <br> [TTS 文档](Doc/TTS/TTS_Android.md) |
-| iOS / macOS（ObjC） | 2026-09-03 | iOS：[下载 ZIP](https://dl.gmertc.com/voiceai/13.5.0/VoiceAI_iOS_sdk_13.5.0.223.zip)<br>macOS：[下载 ZIP](https://dl.gmertc.com/voiceai/13.5.0/VoiceAI_Mac_sdk_13.5.0.223.zip) | [ASR 文档](Doc/ASR/ASR_iOS_macOS.md) <br> [TTS 文档](Doc/TTS/TTS_iOS_macOS.md) |
-| HarmonyOS（ArkTS） | 2026-09-03 | [OHPM](https://ohpm.openharmony.cn/#/cn/detail/@tencentcloud%2Fliteavsdk_voiceai)<br>[下载 ZIP](https://dl.gmertc.com/voiceai/13.5.0/VoiceAI_OHOS_sdk_13.5.0.223.zip) | [ASR 文档](Doc/ASR/ASR_HarmonyOS.md) <br> [TTS 文档](Doc/TTS/TTS_HarmonyOS.md) |
+| Windows / 桌面（C++） | 2026-09-03 | [下载 ZIP](https://dl.gmertc.com/voiceai/13.6.0/VoiceAI_Win_sdk_13.6.0.237.zip) | [ASR 文档](Doc/ASR/ASR_Windows.md) <br> [TTS 文档](Doc/TTS/TTS_Windows.md) |
+| Android（Java） | 2026-09-03 | [Maven](https://central.sonatype.com/artifact/com.tencent.liteav/LiteAVSDK_VoiceAI)<br>[下载 ZIP](https://dl.gmertc.com/voiceai/13.6.0/VoiceAI_Android_sdk_13.6.0.237.zip) | [ASR 文档](Doc/ASR/ASR_Android.md) <br> [TTS 文档](Doc/TTS/TTS_Android.md) |
+| iOS / macOS（ObjC） | 2026-09-03 | iOS：[下载 ZIP](https://dl.gmertc.com/voiceai/13.6.0/VoiceAI_iOS_sdk_13.6.0.237.zip)<br>macOS：[下载 ZIP](https://dl.gmertc.com/voiceai/13.6.0/VoiceAI_Mac_sdk_13.6.0.237.zip) | [ASR 文档](Doc/ASR/ASR_iOS_macOS.md) <br> [TTS 文档](Doc/TTS/TTS_iOS_macOS.md) |
+| HarmonyOS（ArkTS） | 2026-09-03 | [OHPM](https://ohpm.openharmony.cn/#/cn/detail/@tencentcloud%2Fliteavsdk_voiceai)<br>[下载 ZIP](https://dl.gmertc.com/voiceai/13.6.0/VoiceAI_OHOS_sdk_13.6.0.237.zip) | [ASR 文档](Doc/ASR/ASR_HarmonyOS.md) <br> [TTS 文档](Doc/TTS/TTS_HarmonyOS.md) |
 
 > Android 与 HarmonyOS 推荐直接使用 Maven / ohpm 集成，无需下载 ZIP 包；ZIP 包内含 AAR / HAR、头文件与 Demo 工程，适合离线集成。
 
