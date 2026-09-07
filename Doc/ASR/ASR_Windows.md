@@ -227,7 +227,7 @@ void RunASR() {
 | 参数 | 类型 | 说明 |
 |---|---|---|
 | `extraRequestParams` | `string` | Query String 格式的引擎参数，整体追加到 ASR URL 末尾。 |
-| `clientDenoiseStrategy` | `int` | 降噪策略：`0`=关闭（默认），`1`=开启（Percepnet）。 |
+| `clientDenoiseStrategy` | `int` | 降噪策略：`0`=关闭，`1`=录音笔场景，`2`=AI 对话场景，`3`=语音输入场景（默认）。 |
 
 `extraRequestParams` 可用键名：
 
