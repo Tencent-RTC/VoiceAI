@@ -1,10 +1,4 @@
-# 实时语音合成（TTS）接入文档 —— Windows /桌面 (C++)
-
-> 模块：`TXRealtimeTTS @ TXLiteAVSDK`
->
-> 本文档面向 Windows 及桌面 C++ 平台，介绍腾讯实时语音合成（Text-To-Speech，TTS）SDK 的接入方式与完整 API 说明。
-
----
+本文档面向 Windows 及桌面 C++ 平台，介绍 VoiceAI TTS SDK 的接入方式与完整 API 说明
 
 ## 一、功能简介
 

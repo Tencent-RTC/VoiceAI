@@ -1,10 +1,4 @@
-# 实时语音合成（TTS）接入文档 —— iOS / macOS (Objective-C)
-
-> 模块：`TXRealtimeTTS @ TXLiteAVSDK`
->
-> 本文档面向 iOS / macOS 平台，介绍腾讯实时语音合成（Text-To-Speech，TTS）SDK 的接入方式与完整 API 说明。
-
----
+本文档面向 iOS / macOS 平台，介绍 VoiceAI TTS SDK 的接入方式与完整 API 说明
 
 ## 一、功能简介
 
@@ -80,23 +74,6 @@ end
 - `offline.licenseKey`：离线授权 key。
 
 `licenseUrl` 与 `licenseKey` 由控制台申请获得，须在 `start` 之前填入 `TXRealtimeTTSParams.offline`。
-
-**内置 License 文件【可选】**
-
-离线鉴权除在初始化时传入正式的 License URL 与 License Key 外，还可以将 License 文件内置到宿主App 中，SDK内部优先使用离线 License 文件，如果离线 License 文件不存在或者无效，则从License URL 与 License Key里面获取鉴权信息。
-
-将下载得到的 License 文件重命名为 `TXLiveSDK.licence`（注意后缀是 `.licence`，不是 `.license`，文件内容无需修改），添加到宿主 App Target，并确认：
-
-1. 勾选宿主 App 的 Target Membership。
-2. 文件已加入 `Build Phases → Copy Bundle Resources`。
-3. 最终文件位于 `YourApp.app/TXLiveSDK.licence`。
-
-注意：
-
-- 不要只放入 VoiceAI Framework 或独立资源 Bundle。
-- 文件名区分大小写，请固定使用 `TXLiveSDK.licence`。
-- 当前 SDK 不会自动将 License 文件打入 Framework，需由宿主 App 自行配置。
-- 即使已内置 License 文件，初始化时仍需传入正式的 License URL 与对应的 License Key。
 
 #### 2.3.2 在线 TTS 鉴权
 
