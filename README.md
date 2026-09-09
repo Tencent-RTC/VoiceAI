@@ -1,5 +1,21 @@
 # VoiceAI
 
+<table>
+<tr>
+<td rowspan="1" colspan="1" ><br><img src="https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100027984178/57880178ac0d11f1ad6d52540073fd3b.jpeg" alt="" />
+</td>
+
+<td rowspan="1" colspan="1" ><br><img src="https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100027984178/6aa772cbac0d11f1ad6d52540073fd3b.jpeg" alt="" />
+</td>
+
+<td rowspan="1" colspan="1" ><br><img src="https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100027984178/28baa73dac0e11f1a3e5525400df33b8.jpeg" alt="" />
+</td>
+
+<td rowspan="1" colspan="1" ><br><img src="https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100027984178/35e97759ac1011f18492525400a31896.jpeg" alt="" />
+</td>
+</tr>
+</table>
+
 VoiceAI 是 **TXLiteAVSDK** 中的实时语音 AI 能力集合，为应用提供「听」与「说」两条链路：实时语音识别（ASR）与实时语音合成（TTS），并提供统一的日志配置入口 `TXVoiceAILog`。
 
 - **四端同构**：C++ / Java / Objective-C / ArkTS 四套封装语义一致，一次理解多端复用

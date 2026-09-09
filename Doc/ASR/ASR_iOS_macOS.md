@@ -1,4 +1,16 @@
 本文档面向 iOS & macOS 平台，介绍 VoiceAI ASR SDK 的接入方式与完整 API 说明
+<table>
+<tr>
+<td rowspan="1" colspan="1" ><br><img src="https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100027984178/57880178ac0d11f1ad6d52540073fd3b.jpeg" alt="" />
+</td>
+
+<td rowspan="1" colspan="1" ><br><img src="https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100027984178/6aa772cbac0d11f1ad6d52540073fd3b.jpeg" alt="" />
+</td>
+
+<td rowspan="1" colspan="1" ><br><img src="https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100027984178/35e97759ac1011f18492525400a31896.jpeg" alt="" />
+</td>
+</tr>
+</table>
 
 ## 一、功能简介
 
@@ -12,6 +24,14 @@
 - **实时音量回调**：通过 `onRealtimeASRVolume` 获取当前音量等级 `[0, 100]`，可用于绘制音量波动效果。
 - **自定义音频采集**：可通过 `enableCustomCapture` 开启，自行采集 PCM 后调用 `feedPcmData` 送入引擎。
 - **多监听器**：通过 `addListener:` / `removeListener:` 注册多个回调监听器。
+
+#### 相比直接 WebSocket 接入的优势
+
+相比业务方自行通过 WebSocket 对接 ASR 后端，SDK 在端侧完成音频前处理，提供以下开箱即用的能力：
+
+- **端侧远场人声降噪**：SDK 内置远场人声增强与降噪算法，识别过程中可消除远场人声、环境噪声的干扰，显著提升会议室、客厅、车载等远场场景的识别准确率，业务方无需自行搭建音频前处理链路。可通过实验性 API `callExperimentalAPI:` 的 `setExtraParams` 配置 `clientDenoiseStrategy` 选择降噪策略（详见「五、实验性 API」中的 `setExtraParams`）。
+
+- **声纹降噪（只识别指定人的声音）**：支持指定目标说话人，识别过程中只转写目标说话人的声音，自动忽略其他人的说话内容，适用于多人会议、车载多乘员等「只听某一个人」的场景。
 
 ---
 
