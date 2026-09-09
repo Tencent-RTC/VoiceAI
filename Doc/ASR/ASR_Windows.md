@@ -1,17 +1,4 @@
 本文档面向 Windows 平台，介绍 VoiceAI ASR SDK 的接入方式与完整 API 说明
-<table>
-<tr>
-<td rowspan="1" colspan="1" ><br><img src="https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100027984178/57880178ac0d11f1ad6d52540073fd3b.jpeg" alt="" />
-</td>
-
-<td rowspan="1" colspan="1" ><br><img src="https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100027984178/6aa772cbac0d11f1ad6d52540073fd3b.jpeg" alt="" />
-</td>
-
-<td rowspan="1" colspan="1" ><br><img src="https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100027984178/35e97759ac1011f18492525400a31896.jpeg" alt="" />
-</td>
-</tr>
-</table>
-
 ## 一、功能简介
 
 `ITXRealtimeASR` 是实时流式语音转写引擎：
