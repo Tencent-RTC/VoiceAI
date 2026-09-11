@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ASR 识别中 / 结果确认 弹窗布局。
+  - 识别中：展示实时文本(vib_asr_live) + 提示(vib_asr_hint)。
+  - 松手确认：展示可编辑文本(vib_asr_edit) + 底部「取消/发送」按钮。
+  遮罩自顶向下由透明到深色渐变，卡片固定在距底部约 1/3 处。
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/vib_asr_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/voice_input_bar_bg_asr_scrim">
+
+    <!-- 卡片容器：底部固定，marginBottom 由代码设为屏高的 1/3 -->
+    <LinearLayout
+        android:id="@+id/vib_asr_card_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/voice_input_bar_bg_asr_card"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <!-- 实时识别文本 -->
+            <TextView
+                android:id="@+id/vib_asr_live"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="4sp"
+                android:text="请说话…"
+                android:textColor="#1A1F36"
+                android:textSize="18sp" />
+
+            <!-- 识别中提示 -->
+            <TextView
+                android:id="@+id/vib_asr_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="松开手指结束识别"
+                android:textColor="#6B7488"
+                android:textSize="13sp" />
+
+            <!-- 可编辑识别结果（确认态） -->
+            <EditText
+                android:id="@+id/vib_asr_edit"
+                android:layout_width="match_parent"
+                android:layout_height="96dp"
+                android:background="@null"
+                android:gravity="top|start"
+                android:hint="识别内容为空，可手动输入"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine"
+                android:padding="4dp"
+                android:textColor="#1A1F36"
+                android:textColorHint="#6B7488"
+                android:textSize="16sp"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 取消 / 发送 按钮（仅确认态显示），固定在底部 90dp -->
+    <LinearLayout
+        android:id="@+id/vib_asr_buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="90dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/vib_asr_cancel"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:background="@drawable/voice_input_bar_bg_dialog_cancel"
+            android:padding="15dp"
+            android:scaleType="fitCenter"
+            android:contentDescription="取消"
+            app:srcCompat="@drawable/voice_input_bar_ic_close" />
+
+        <TextView
+            android:id="@+id/vib_asr_send"
+            android:layout_width="140dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="56dp"
+            android:background="@drawable/voice_input_bar_bg_dialog_send"
+            android:gravity="center"
+            android:text="发送"
+            android:textColor="#FFFFFFFF"
+            android:textSize="16sp" />
+    </LinearLayout>
+</FrameLayout>

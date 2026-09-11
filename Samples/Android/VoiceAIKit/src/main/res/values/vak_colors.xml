@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- VoiceAIKit AI 对话配色（与 Demo 主题一致，供 Kit 内部界面使用） -->
+    <color name="vak_background">#FFF4F6FB</color>
+    <color name="vak_text_primary">#FF1A1F36</color>
+    <color name="vak_text_secondary">#FF6B7488</color>
+    <color name="vak_white">#FFFFFFFF</color>
+
+    <color name="vak_brand_blue">#FF2B6CF6</color>
+    <color name="vak_user_bubble_start">#FF2B6CF6</color>
+    <color name="vak_user_bubble_end">#FF5B8DEF</color>
+
+    <color name="vak_icon_button_bg">#FFE7ECF7</color>
+    <color name="vak_icon_button_bg_active">#FFDCE8FF</color>
+    <color name="vak_neutral_icon">#FF4B5468</color>
+
+    <color name="vak_input_field_bg">#FFF4F6FB</color>
+    <color name="vak_hold_recognizing">#FFD6E4FF</color>
+    <color name="vak_hold_cancel">#FFFFE6E6</color>
+
+    <!-- 实时对话功能色 -->
+    <color name="vak_mic_on">#FF3AA655</color>
+    <color name="vak_mic_off">#FF4B4B4B</color>
+    <color name="vak_tts_on">#FF4B4B4B</color>
+    <color name="vak_tts_off">#FF9AA0A6</color>
+    <color name="vak_interrupt_active">#FFFF9500</color>
+    <color name="vak_exit">#FFFF3B30</color>
+
+    <color name="vak_error_orange">#FFE8853D</color>
+    <color name="vak_retry_red">#FFE85C5C</color>
+</resources>

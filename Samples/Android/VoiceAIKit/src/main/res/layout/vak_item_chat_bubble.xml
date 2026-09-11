@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 单条聊天气泡：外层 FrameLayout 控制左右对齐，内层容器承载内容 -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/vak_bubble_gap">
+
+    <com.tencent.voiceai.kit.view.component.MaxWidthLinearLayout
+        android:id="@+id/vak_bubble_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/vak_bg_bubble_ai"
+        android:paddingHorizontal="14dp"
+        android:paddingVertical="10dp">
+
+        <!-- 正常文本内容 -->
+        <TextView
+            android:id="@+id/vak_bubble_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:lineSpacingExtra="4sp"
+            android:textColor="@color/vak_text_primary" />
+
+        <!-- 「思考中…」占位（含进度条），默认隐藏 -->
+        <LinearLayout
+            android:id="@+id/vak_bubble_sending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:layout_width="14dp"
+                android:layout_height="14dp"
+                style="?android:attr/progressBarStyleSmall"
+                android:indeterminateTint="@color/vak_text_secondary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="思考中…"
+                android:textSize="14sp"
+                android:textColor="@color/vak_text_secondary" />
+        </LinearLayout>
+
+        <!-- 错误 + 重试，默认隐藏 -->
+        <LinearLayout
+            android:id="@+id/vak_bubble_error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    app:srcCompat="@drawable/vak_ic_warning" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="请求失败"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/vak_text_primary" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/vak_bubble_error_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="12sp"
+                android:textColor="@color/vak_text_secondary"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/vak_bubble_retry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="重试"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/vak_brand_blue" />
+        </LinearLayout>
+    </com.tencent.voiceai.kit.view.component.MaxWidthLinearLayout>
+</FrameLayout>

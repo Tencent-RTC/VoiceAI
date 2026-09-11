@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- VoiceAIKit 尺寸（宿主可通过同名资源覆盖） -->
+
+    <!-- 聊天气泡之间的垂直间距（与 Compose Demo 的 spacedBy(10.dp) 保持一致） -->
+    <dimen name="vak_bubble_gap">10dp</dimen>
+</resources>

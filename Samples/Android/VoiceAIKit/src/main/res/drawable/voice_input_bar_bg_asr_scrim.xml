@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ASR 弹窗遮罩：自顶向下由透明到深色渐变 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:angle="270"
+        android:startColor="#000B1426"
+        android:centerColor="#8A0B1426"
+        android:endColor="#F50B1426"
+        android:type="linear" />
+</shape>

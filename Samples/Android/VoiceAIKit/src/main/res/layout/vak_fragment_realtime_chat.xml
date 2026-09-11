@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/vak_background"
+    android:fitsSystemWindows="true">
+
+    <!-- 顶部工具栏：居中标题 + 右侧「字」开关 -->
+    <RelativeLayout
+        android:id="@+id/vak_rt_title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="18dp"
+        android:paddingVertical="14dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="AI 实时对话"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:textColor="@color/vak_text_primary" />
+
+        <TextView
+            android:id="@+id/vak_rt_toggle_text"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:text="字"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:background="@drawable/vak_bg_circle_light"
+            android:textColor="@color/vak_neutral_icon" />
+    </RelativeLayout>
+
+    <!-- 内容区容器 -->
+    <FrameLayout
+        android:id="@+id/vak_rt_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/vak_rt_title_bar"
+        app:layout_constraintBottom_toTopOf="@id/vak_rt_bottom_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- 圆球模式（默认）：尺寸由 View 自身测量决定，避免固定尺寸裁掉外围光晕 -->
+        <com.tencent.voiceai.kit.view.component.VoiceOrbView
+            android:id="@+id/vak_rt_orb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" />
+
+        <!-- 文本模式 -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/vak_rt_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingStart="28dp"
+            android:paddingEnd="28dp"
+            android:paddingTop="45dp"
+            android:paddingBottom="42dp"
+            android:clipToPadding="false"
+            android:visibility="gone" />
+
+        <!-- 空态提示（文本模式且无消息时） -->
+        <TextView
+            android:id="@+id/vak_rt_empty_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="105dp"
+            android:text="正在聆听，直接说话即可开始对话"
+            android:textColor="@color/vak_text_secondary"
+            android:textSize="15sp"
+            android:visibility="gone" />
+    </FrameLayout>
+
+    <!-- 底部控制区 -->
+    <LinearLayout
+        android:id="@+id/vak_rt_bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:paddingHorizontal="18dp"
+        android:paddingVertical="10dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- 状态提示 -->
+        <TextView
+            android:id="@+id/vak_rt_hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:text="正在聆听，直接说话即可"
+            android:textColor="@color/vak_text_secondary"
+            android:textSize="15sp" />
+
+        <!-- 四枚圆形按钮 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginVertical="8dp">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/vak_rt_btn_mic"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/vak_bg_circle_white"
+                android:padding="15dp"
+                app:srcCompat="@drawable/vak_ic_mic"
+                android:contentDescription="麦克风开关" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/vak_rt_btn_tts"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="18dp"
+                android:background="@drawable/vak_bg_circle_white"
+                android:padding="15dp"
+                app:srcCompat="@drawable/vak_ic_volume_up"
+                android:contentDescription="播报开关" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/vak_rt_btn_interrupt"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="18dp"
+                android:background="@drawable/vak_bg_circle_white"
+                android:padding="15dp"
+                app:srcCompat="@drawable/vak_ic_stop"
+                android:contentDescription="打断" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/vak_rt_btn_exit"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginStart="18dp"
+                android:background="@drawable/vak_bg_circle_white"
+                android:padding="15dp"
+                app:srcCompat="@drawable/vak_ic_close"
+                android:contentDescription="退出" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 顶部 Toast -->
+    <TextView
+        android:id="@+id/vak_rt_toast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#E6323232"
+        android:paddingHorizontal="18dp"
+        android:paddingVertical="10dp"
+        android:textColor="@color/vak_white"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/vak_rt_title_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  VoiceInputBar 内部布局。
+  以 <merge> 挂载到 VoiceInputBar（水平 LinearLayout，gravity=bottom）之下。
+  子项：切换按钮 / 文本输入区 / 按住说话 / 发送按钮（中间两者互斥显隐）。
+-->
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:parentTag="android.widget.LinearLayout">
+
+    <!-- 键盘 / 语音 切换 -->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/vib_btn_toggle"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/voice_input_bar_bg_control_toggle"
+        android:padding="6dp"
+        android:scaleType="fitCenter"
+        android:contentDescription="切换语音/键盘"
+        app:srcCompat="@drawable/voice_input_bar_ic_voice_wave" />
+
+    <!-- 文本输入区（内含麦克风按钮） -->
+    <FrameLayout
+        android:id="@+id/vib_input_container"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="8dp"
+        android:minHeight="42dp"
+        android:background="@drawable/voice_input_bar_bg_input_field"
+        android:paddingStart="16dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp">
+
+        <EditText
+            android:id="@+id/vib_et_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:background="@null"
+            android:gravity="center_vertical"
+            android:hint="说点什么…"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
+            android:maxLines="5"
+            android:minHeight="34dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="36dp"
+            android:paddingTop="0dp"
+            android:paddingBottom="0dp"
+            android:textColor="#1A1F36"
+            android:textColorHint="#6B7488"
+            android:textSize="15sp" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/vib_btn_mic"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="bottom|end"
+            android:background="@android:color/transparent"
+            android:padding="4dp"
+            android:scaleType="fitCenter"
+            android:contentDescription="语音输入"
+            app:srcCompat="@drawable/voice_input_bar_ic_mic" />
+    </FrameLayout>
+
+    <!-- 按住说话（语音模式，与输入区互斥） -->
+    <TextView
+        android:id="@+id/vib_btn_hold"
+        android:layout_width="0dp"
+        android:layout_height="42dp"
+        android:layout_weight="1"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/voice_input_bar_bg_hold_normal"
+        android:gravity="center"
+        android:text="按住 说话"
+        android:textColor="#6B7488"
+        android:textSize="15sp"
+        android:visibility="gone" />
+
+    <!-- 发送按钮 -->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/vib_btn_send"
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="4dp"
+        android:background="@drawable/voice_input_bar_bg_send_button"
+        android:padding="7dp"
+        android:scaleType="fitCenter"
+        android:contentDescription="发送"
+        app:srcCompat="@drawable/voice_input_bar_ic_send" />
+</merge>
