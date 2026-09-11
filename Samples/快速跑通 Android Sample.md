@@ -3,6 +3,23 @@
 **10 分钟内跑通语音识别（ASR）+ 大模型对话（LLM）+ 语音播报（TTS）**。
 
 ---
+<table>
+<tr>
+
+<td rowspan="1" colspan="1" ><br><img src="https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100027984178/df05647fad9a11f1a174525400074c32.jpeg" alt="" />
+</td>
+
+<td rowspan="1" colspan="1" ><br><img src="https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100027984178/57880178ac0d11f1ad6d52540073fd3b.jpeg" alt="" />
+</td>
+
+<td rowspan="1" colspan="1" ><br><img src="https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100027984178/35e97759ac1011f18492525400a31896.jpeg" alt="" />
+</td>
+
+<td rowspan="1" colspan="1" ><br><img src="https://write-document-release-1258344699.cos.ap-guangzhou.tencentcos.cn/100027984178/f16bc0e5ad9a11f1b05552540073fd3b.jpeg" alt="" />
+</td>
+
+</tr>
+</table>
 
 ## 1. 环境要求
 
