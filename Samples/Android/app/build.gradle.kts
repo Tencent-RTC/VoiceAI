@@ -17,15 +17,6 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    signingConfigs {
-        create("release") {
-            storeFile = file("professional.keystore")
-            storePassword = ""
-            keyAlias = "tencent"
-            keyPassword = ""
-        }
-    }
-
     buildTypes {
         release {
             isMinifyEnabled = false
