@@ -106,5 +106,4 @@ VoiceAIKit/                       ← 本目录（Android 工程根）
 | ASR / TTS 报鉴权失败 | `SDKAPPID` / `SECRETKEY` 填错，或 UserSig 过期；Demo 在客户端算 UserSig 只为调试 |
 | 有文字回复但没声音 | 检查网络；确认音色 ID 是**云端在线音色**；确认标题栏「自动朗读」已开启 |
 | 切换音色后没变化 | 音色在**下次进入对话页**生效 |
-| 声纹降噪无效果 | 先到「设置 → 声纹注册」完成注册 |
 | 编译报 JDK 版本错误 | 需 JDK 17：`Android Studio → Settings → Gradle → Gradle JDK` |
