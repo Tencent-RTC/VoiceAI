@@ -105,6 +105,6 @@ VoiceAIKit/                       ← 本目录（Android 工程根）
 | 提示「未配置 LLM 服务地址与密钥」 | LLM 为可选项：仅在使用 AI 对话时才需要填写 `Config.OPEN_AIP_URL` / `OPEN_AIP_KEY` / `OPEN_AIP_MODEL`，不去体验对话能力可忽略该提示 |
 | ASR / TTS 报鉴权失败 | `SDKAPPID` / `SECRETKEY` 填错，或 UserSig 过期；Demo 在客户端算 UserSig 只为调试 |
 | 有文字回复但没声音 | 检查网络；确认音色 ID 是**云端在线音色**；确认标题栏「自动朗读」已开启 |
-| 切换音色后没变化 | 音色在**下次进入对话页**生效；且必须是云端音色 ID（Kit 已移除离线合成，不再读取本地资源包） |
+| 切换音色后没变化 | 音色在**下次进入对话页**生效 |
 | 声纹降噪无效果 | 先到「设置 → 声纹注册」完成注册 |
 | 编译报 JDK 版本错误 | 需 JDK 17：`Android Studio → Settings → Gradle → Gradle JDK` |
