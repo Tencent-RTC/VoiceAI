@@ -1,0 +1,25 @@
+# VoiceAIKitDemo - CocoaPods 依赖
+# 接入 VoiceAI SDK，参考官方文档：
+# https://cloud.tencent.com/document/product/647/137680
+#
+# 使用步骤：
+#   python3 gen_xcodeproj.py --use-pods
+#   pod install
+#   open VoiceAIKitDemo.xcworkspace
+
+platform :ios, '16.0'
+use_frameworks!
+
+target 'VoiceAIKitDemo' do
+  # 腾讯云 VoiceAI SDK（含实时 ASR / 在线 TTS）
+  pod 'TXLiteAVSDK_VoiceAI_iOS', '13.6.0.237'
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |t|
+    t.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '16.0'
+      config.build_settings['ENABLE_BITCODE'] = 'NO'
+    end
+  end
+end

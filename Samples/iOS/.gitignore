@@ -1,0 +1,22 @@
+# Xcode（工程由 gen_xcodeproj.py 生成）
+VoiceAIKitDemo.xcodeproj/
+VoiceAIKitDemo.xcworkspace/
+build/
+DerivedData/
+xcuserdata/
+*.xcuserstate
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# SDK（体积大，按需下载，见 VoiceAIKitDemo/Frameworks/README.md）
+VoiceAIKitDemo/Frameworks/*.xcframework/
+
+# macOS
+.DS_Store
+__MACOSX/
