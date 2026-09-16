@@ -8,7 +8,7 @@ android {
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.tencent.voiceai.demo.android"
+        applicationId = "com.tencent.voiceai.sample.android"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
