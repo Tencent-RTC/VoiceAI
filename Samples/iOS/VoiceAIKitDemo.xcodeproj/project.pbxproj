@@ -1,0 +1,440 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AKT0000000020002000000000 /* VoiceAIKitDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0000000010001000000000 /* VoiceAIKitDemoApp.swift */; };
+		AKT0000100020002000000001 /* Demo/AppNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0000100010001000000001 /* Demo/AppNavigation.swift */; };
+		AKT0000200020002000000002 /* Demo/Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0000200010001000000002 /* Demo/Config.swift */; };
+		AKT0000300020002000000003 /* Demo/GenerateTestUserSig.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0000300010001000000003 /* Demo/GenerateTestUserSig.swift */; };
+		AKT0000400020002000000004 /* Demo/Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0000400010001000000004 /* Demo/Theme.swift */; };
+		AKT0000500020002000000005 /* Demo/Components/ChatBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0000500010001000000005 /* Demo/Components/ChatBubbleView.swift */; };
+		AKT0000600020002000000006 /* Demo/Components/PageScaffold.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0000600010001000000006 /* Demo/Components/PageScaffold.swift */; };
+		AKT0000700020002000000007 /* Demo/Components/Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0000700010001000000007 /* Demo/Components/Toast.swift */; };
+		AKT0000800020002000000008 /* Demo/Pages/ChatPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0000800010001000000008 /* Demo/Pages/ChatPage.swift */; };
+		AKT0000900020002000000009 /* Demo/Pages/HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0000900010001000000009 /* Demo/Pages/HomePage.swift */; };
+		AKT0001000020002000000010 /* Demo/Pages/RealtimeChatPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0001000010001000000010 /* Demo/Pages/RealtimeChatPage.swift */; };
+		AKT0001100020002000000011 /* Demo/Pages/SettingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0001100010001000000011 /* Demo/Pages/SettingPage.swift */; };
+		AKT0001200020002000000012 /* Demo/Pages/TtsVoiceSettingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0001200010001000000012 /* Demo/Pages/TtsVoiceSettingPage.swift */; };
+		AKT0001300020002000000013 /* Demo/Pages/VoiceInputPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0001300010001000000013 /* Demo/Pages/VoiceInputPage.swift */; };
+		AKT0001400020002000000014 /* Demo/Pages/VoiceprintRegisterPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0001400010001000000014 /* Demo/Pages/VoiceprintRegisterPage.swift */; };
+		AKT0001500020002000000015 /* Demo/ViewModels/SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0001500010001000000015 /* Demo/ViewModels/SettingViewModel.swift */; };
+		AKT0001600020002000000016 /* Demo/ViewModels/TtsVoiceSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0001600010001000000016 /* Demo/ViewModels/TtsVoiceSettingViewModel.swift */; };
+		AKT0001700020002000000017 /* Demo/ViewModels/VoiceInputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0001700010001000000017 /* Demo/ViewModels/VoiceInputViewModel.swift */; };
+		AKT0001800020002000000018 /* Demo/ViewModels/VoiceprintRegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0001800010001000000018 /* Demo/ViewModels/VoiceprintRegisterViewModel.swift */; };
+		AKT0001900020002000000019 /* VoiceAIKit/AIChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0001900010001000000019 /* VoiceAIKit/AIChatController.swift */; };
+		AKT0002000020002000000020 /* VoiceAIKit/AsrEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0002000010001000000020 /* VoiceAIKit/AsrEngine.swift */; };
+		AKT0002100020002000000021 /* VoiceAIKit/ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0002100010001000000021 /* VoiceAIKit/ChatBubble.swift */; };
+		AKT0002200020002000000022 /* VoiceAIKit/LlmClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0002200010001000000022 /* VoiceAIKit/LlmClient.swift */; };
+		AKT0002300020002000000023 /* VoiceAIKit/RealtimeChatController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0002300010001000000023 /* VoiceAIKit/RealtimeChatController.swift */; };
+		AKT0002400020002000000024 /* VoiceAIKit/TtsEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0002400010001000000024 /* VoiceAIKit/TtsEngine.swift */; };
+		AKT0002500020002000000025 /* VoiceAIKit/TtsVoiceCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0002500010001000000025 /* VoiceAIKit/TtsVoiceCatalog.swift */; };
+		AKT0002600020002000000026 /* VoiceAIKit/VoiceAIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0002600010001000000026 /* VoiceAIKit/VoiceAIKit.swift */; };
+		AKT0002700020002000000027 /* VoiceAIKit/VoiceAIKitDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0002700010001000000027 /* VoiceAIKit/VoiceAIKitDefaults.swift */; };
+		AKT0002800020002000000028 /* VoiceAIKit/VoiceAIPrefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0002800010001000000028 /* VoiceAIKit/VoiceAIPrefs.swift */; };
+		AKT0002900020002000000029 /* VoiceAIKit/VoiceprintStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0002900010001000000029 /* VoiceAIKit/VoiceprintStore.swift */; };
+		AKT0003000020002000000030 /* VoiceAIKit/Components/VoiceInputBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0003000010001000000030 /* VoiceAIKit/Components/VoiceInputBar.swift */; };
+		AKT0003100020002000000031 /* VoiceAIKit/Components/VoiceOrbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0003100010001000000031 /* VoiceAIKit/Components/VoiceOrbView.swift */; };
+		AKT0003200020002000000032 /* VoiceAIKit/Components/VoiceWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0003200010001000000032 /* VoiceAIKit/Components/VoiceWaveView.swift */; };
+		AKT0003300020002000000033 /* VoiceAIKit/Extensions/View+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AKT0003300010001000000033 /* VoiceAIKit/Extensions/View+DismissKeyboard.swift */; };
+		AKT0RXCA00200020002000000FR0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AKT0RXCA00100010001000000FR0 /* Assets.xcassets */; };
+		/* VoiceAI SDK 由 CocoaPods 提供 (pod TXLiteAVSDK_VoiceAI_iOS) */
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		AKT0000100010001F00000003 /* VoiceAIKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; path = VoiceAIKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AKT0000100010001F00000002 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VoiceAIKitDemo/Info.plist"; sourceTree = "<group>"; };
+
+		AKT0000000010001000000000 /* VoiceAIKitDemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VoiceAIKitDemoApp.swift"; sourceTree = "<group>"; };
+		AKT0000100010001000000001 /* Demo/AppNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demo/AppNavigation.swift"; sourceTree = "<group>"; };
+		AKT0000200010001000000002 /* Demo/Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demo/Config.swift"; sourceTree = "<group>"; };
+		AKT0000300010001000000003 /* Demo/GenerateTestUserSig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demo/GenerateTestUserSig.swift"; sourceTree = "<group>"; };
+		AKT0000400010001000000004 /* Demo/Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demo/Theme.swift"; sourceTree = "<group>"; };
+		AKT0000500010001000000005 /* Demo/Components/ChatBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demo/Components/ChatBubbleView.swift"; sourceTree = "<group>"; };
+		AKT0000600010001000000006 /* Demo/Components/PageScaffold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demo/Components/PageScaffold.swift"; sourceTree = "<group>"; };
+		AKT0000700010001000000007 /* Demo/Components/Toast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demo/Components/Toast.swift"; sourceTree = "<group>"; };
+		AKT0000800010001000000008 /* Demo/Pages/ChatPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demo/Pages/ChatPage.swift"; sourceTree = "<group>"; };
+		AKT0000900010001000000009 /* Demo/Pages/HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demo/Pages/HomePage.swift"; sourceTree = "<group>"; };
+		AKT0001000010001000000010 /* Demo/Pages/RealtimeChatPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demo/Pages/RealtimeChatPage.swift"; sourceTree = "<group>"; };
+		AKT0001100010001000000011 /* Demo/Pages/SettingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demo/Pages/SettingPage.swift"; sourceTree = "<group>"; };
+		AKT0001200010001000000012 /* Demo/Pages/TtsVoiceSettingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demo/Pages/TtsVoiceSettingPage.swift"; sourceTree = "<group>"; };
+		AKT0001300010001000000013 /* Demo/Pages/VoiceInputPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demo/Pages/VoiceInputPage.swift"; sourceTree = "<group>"; };
+		AKT0001400010001000000014 /* Demo/Pages/VoiceprintRegisterPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demo/Pages/VoiceprintRegisterPage.swift"; sourceTree = "<group>"; };
+		AKT0001500010001000000015 /* Demo/ViewModels/SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demo/ViewModels/SettingViewModel.swift"; sourceTree = "<group>"; };
+		AKT0001600010001000000016 /* Demo/ViewModels/TtsVoiceSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demo/ViewModels/TtsVoiceSettingViewModel.swift"; sourceTree = "<group>"; };
+		AKT0001700010001000000017 /* Demo/ViewModels/VoiceInputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demo/ViewModels/VoiceInputViewModel.swift"; sourceTree = "<group>"; };
+		AKT0001800010001000000018 /* Demo/ViewModels/VoiceprintRegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Demo/ViewModels/VoiceprintRegisterViewModel.swift"; sourceTree = "<group>"; };
+		AKT0001900010001000000019 /* VoiceAIKit/AIChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VoiceAIKit/AIChatController.swift"; sourceTree = "<group>"; };
+		AKT0002000010001000000020 /* VoiceAIKit/AsrEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VoiceAIKit/AsrEngine.swift"; sourceTree = "<group>"; };
+		AKT0002100010001000000021 /* VoiceAIKit/ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VoiceAIKit/ChatBubble.swift"; sourceTree = "<group>"; };
+		AKT0002200010001000000022 /* VoiceAIKit/LlmClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VoiceAIKit/LlmClient.swift"; sourceTree = "<group>"; };
+		AKT0002300010001000000023 /* VoiceAIKit/RealtimeChatController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VoiceAIKit/RealtimeChatController.swift"; sourceTree = "<group>"; };
+		AKT0002400010001000000024 /* VoiceAIKit/TtsEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VoiceAIKit/TtsEngine.swift"; sourceTree = "<group>"; };
+		AKT0002500010001000000025 /* VoiceAIKit/TtsVoiceCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VoiceAIKit/TtsVoiceCatalog.swift"; sourceTree = "<group>"; };
+		AKT0002600010001000000026 /* VoiceAIKit/VoiceAIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VoiceAIKit/VoiceAIKit.swift"; sourceTree = "<group>"; };
+		AKT0002700010001000000027 /* VoiceAIKit/VoiceAIKitDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VoiceAIKit/VoiceAIKitDefaults.swift"; sourceTree = "<group>"; };
+		AKT0002800010001000000028 /* VoiceAIKit/VoiceAIPrefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VoiceAIKit/VoiceAIPrefs.swift"; sourceTree = "<group>"; };
+		AKT0002900010001000000029 /* VoiceAIKit/VoiceprintStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VoiceAIKit/VoiceprintStore.swift"; sourceTree = "<group>"; };
+		AKT0003000010001000000030 /* VoiceAIKit/Components/VoiceInputBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VoiceAIKit/Components/VoiceInputBar.swift"; sourceTree = "<group>"; };
+		AKT0003100010001000000031 /* VoiceAIKit/Components/VoiceOrbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VoiceAIKit/Components/VoiceOrbView.swift"; sourceTree = "<group>"; };
+		AKT0003200010001000000032 /* VoiceAIKit/Components/VoiceWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VoiceAIKit/Components/VoiceWaveView.swift"; sourceTree = "<group>"; };
+		AKT0003300010001000000033 /* VoiceAIKit/Extensions/View+DismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VoiceAIKit/Extensions/View+DismissKeyboard.swift"; sourceTree = "<group>"; };
+		AKT0RXCA00100010001000000FR0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "VoiceAIKitDemo/Assets.xcassets"; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AKT0000400010004F00000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AKT0000400010004F00000003 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXGroup section */
+		AKT0000100010001F00000001 = {
+			isa = PBXGroup;
+			children = (
+				AKT0000100010001F00000005 /* Source */,
+				AKT0000100010001F00000004 /* Frameworks */,
+				AKT0R0000001000100000RG0 /* Resources */,
+				AKT0000100010001F00000002 /* Info.plist */,
+				AKT0000100010001F00000006 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AKT0000100010001F00000005 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				AKT0000000010001000000000 /* VoiceAIKitDemoApp.swift */,
+				AKT0000100010001000000001 /* Demo/AppNavigation.swift */,
+				AKT0000200010001000000002 /* Demo/Config.swift */,
+				AKT0000300010001000000003 /* Demo/GenerateTestUserSig.swift */,
+				AKT0000400010001000000004 /* Demo/Theme.swift */,
+				AKT0000500010001000000005 /* Demo/Components/ChatBubbleView.swift */,
+				AKT0000600010001000000006 /* Demo/Components/PageScaffold.swift */,
+				AKT0000700010001000000007 /* Demo/Components/Toast.swift */,
+				AKT0000800010001000000008 /* Demo/Pages/ChatPage.swift */,
+				AKT0000900010001000000009 /* Demo/Pages/HomePage.swift */,
+				AKT0001000010001000000010 /* Demo/Pages/RealtimeChatPage.swift */,
+				AKT0001100010001000000011 /* Demo/Pages/SettingPage.swift */,
+				AKT0001200010001000000012 /* Demo/Pages/TtsVoiceSettingPage.swift */,
+				AKT0001300010001000000013 /* Demo/Pages/VoiceInputPage.swift */,
+				AKT0001400010001000000014 /* Demo/Pages/VoiceprintRegisterPage.swift */,
+				AKT0001500010001000000015 /* Demo/ViewModels/SettingViewModel.swift */,
+				AKT0001600010001000000016 /* Demo/ViewModels/TtsVoiceSettingViewModel.swift */,
+				AKT0001700010001000000017 /* Demo/ViewModels/VoiceInputViewModel.swift */,
+				AKT0001800010001000000018 /* Demo/ViewModels/VoiceprintRegisterViewModel.swift */,
+				AKT0001900010001000000019 /* VoiceAIKit/AIChatController.swift */,
+				AKT0002000010001000000020 /* VoiceAIKit/AsrEngine.swift */,
+				AKT0002100010001000000021 /* VoiceAIKit/ChatBubble.swift */,
+				AKT0002200010001000000022 /* VoiceAIKit/LlmClient.swift */,
+				AKT0002300010001000000023 /* VoiceAIKit/RealtimeChatController.swift */,
+				AKT0002400010001000000024 /* VoiceAIKit/TtsEngine.swift */,
+				AKT0002500010001000000025 /* VoiceAIKit/TtsVoiceCatalog.swift */,
+				AKT0002600010001000000026 /* VoiceAIKit/VoiceAIKit.swift */,
+				AKT0002700010001000000027 /* VoiceAIKit/VoiceAIKitDefaults.swift */,
+				AKT0002800010001000000028 /* VoiceAIKit/VoiceAIPrefs.swift */,
+				AKT0002900010001000000029 /* VoiceAIKit/VoiceprintStore.swift */,
+				AKT0003000010001000000030 /* VoiceAIKit/Components/VoiceInputBar.swift */,
+				AKT0003100010001000000031 /* VoiceAIKit/Components/VoiceOrbView.swift */,
+				AKT0003200010001000000032 /* VoiceAIKit/Components/VoiceWaveView.swift */,
+				AKT0003300010001000000033 /* VoiceAIKit/Extensions/View+DismissKeyboard.swift */,
+			);
+			path = VoiceAIKitDemo;
+			sourceTree = "<group>";
+		};
+		AKT0000100010001F00000004 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+
+			);
+			name = Frameworks;
+			path = VoiceAIKitDemo/Frameworks;
+			sourceTree = "<group>";
+		};
+		AKT0R0000001000100000RG0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AKT0RXCA00100010001000000FR0 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		AKT0000100010001F00000006 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AKT0000100010001F00000003 /* VoiceAIKitDemo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AKT0000200010002F00000001 /* VoiceAIKitDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AKT0000500010005F00000002;
+			buildPhases = (
+				AKT0000400010004F00000001 /* Sources */,
+				AKT0000400010004F00000002 /* Frameworks */,
+				AKT0R0000004000400000RP0 /* Resources */,
+				AKT0000400010004F00000003 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VoiceAIKitDemo;
+			productName = VoiceAIKitDemo;
+			productReference = AKT0000100010001F00000003;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AKT0000300010003F00000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = AKT0000500010005F00000001;
+			compatibilityVersion = "Xcode 16.0";
+			mainGroup = AKT0000100010001F00000001;
+			productRefGroup = AKT0000100010001F00000006;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AKT0000200010002F00000001,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AKT0000400010004F00000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AKT0000000020002000000000 /* VoiceAIKitDemoApp.swift in Sources */,
+				AKT0000100020002000000001 /* Demo/AppNavigation.swift in Sources */,
+				AKT0000200020002000000002 /* Demo/Config.swift in Sources */,
+				AKT0000300020002000000003 /* Demo/GenerateTestUserSig.swift in Sources */,
+				AKT0000400020002000000004 /* Demo/Theme.swift in Sources */,
+				AKT0000500020002000000005 /* Demo/Components/ChatBubbleView.swift in Sources */,
+				AKT0000600020002000000006 /* Demo/Components/PageScaffold.swift in Sources */,
+				AKT0000700020002000000007 /* Demo/Components/Toast.swift in Sources */,
+				AKT0000800020002000000008 /* Demo/Pages/ChatPage.swift in Sources */,
+				AKT0000900020002000000009 /* Demo/Pages/HomePage.swift in Sources */,
+				AKT0001000020002000000010 /* Demo/Pages/RealtimeChatPage.swift in Sources */,
+				AKT0001100020002000000011 /* Demo/Pages/SettingPage.swift in Sources */,
+				AKT0001200020002000000012 /* Demo/Pages/TtsVoiceSettingPage.swift in Sources */,
+				AKT0001300020002000000013 /* Demo/Pages/VoiceInputPage.swift in Sources */,
+				AKT0001400020002000000014 /* Demo/Pages/VoiceprintRegisterPage.swift in Sources */,
+				AKT0001500020002000000015 /* Demo/ViewModels/SettingViewModel.swift in Sources */,
+				AKT0001600020002000000016 /* Demo/ViewModels/TtsVoiceSettingViewModel.swift in Sources */,
+				AKT0001700020002000000017 /* Demo/ViewModels/VoiceInputViewModel.swift in Sources */,
+				AKT0001800020002000000018 /* Demo/ViewModels/VoiceprintRegisterViewModel.swift in Sources */,
+				AKT0001900020002000000019 /* VoiceAIKit/AIChatController.swift in Sources */,
+				AKT0002000020002000000020 /* VoiceAIKit/AsrEngine.swift in Sources */,
+				AKT0002100020002000000021 /* VoiceAIKit/ChatBubble.swift in Sources */,
+				AKT0002200020002000000022 /* VoiceAIKit/LlmClient.swift in Sources */,
+				AKT0002300020002000000023 /* VoiceAIKit/RealtimeChatController.swift in Sources */,
+				AKT0002400020002000000024 /* VoiceAIKit/TtsEngine.swift in Sources */,
+				AKT0002500020002000000025 /* VoiceAIKit/TtsVoiceCatalog.swift in Sources */,
+				AKT0002600020002000000026 /* VoiceAIKit/VoiceAIKit.swift in Sources */,
+				AKT0002700020002000000027 /* VoiceAIKit/VoiceAIKitDefaults.swift in Sources */,
+				AKT0002800020002000000028 /* VoiceAIKit/VoiceAIPrefs.swift in Sources */,
+				AKT0002900020002000000029 /* VoiceAIKit/VoiceprintStore.swift in Sources */,
+				AKT0003000020002000000030 /* VoiceAIKit/Components/VoiceInputBar.swift in Sources */,
+				AKT0003100020002000000031 /* VoiceAIKit/Components/VoiceOrbView.swift in Sources */,
+				AKT0003200020002000000032 /* VoiceAIKit/Components/VoiceWaveView.swift in Sources */,
+				AKT0003300020002000000033 /* VoiceAIKit/Extensions/View+DismissKeyboard.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AKT0R0000004000400000RP0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AKT0RXCA00200020002000000FR0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AKT0000500010005F00000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VoiceAIKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.voiceai.sample.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AKT0000500010005F00000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VoiceAIKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.voiceai.sample.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		AKT0000500010005F00000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VoiceAIKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.voiceai.sample.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+			};
+			name = Debug;
+		};
+		AKT0000500010005F00000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = VoiceAIKitDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				OTHER_LDFLAGS = "$(inherited)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tencent.voiceai.sample.ios;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = iphoneos;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "Apple Development";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AKT0000500010005F00000001 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AKT0000500010005F00000003,
+				AKT0000500010005F00000004,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AKT0000500010005F00000002 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AKT0000500010005F00000005,
+				AKT0000500010005F00000006,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = AKT0000300010003F00000001;
+}

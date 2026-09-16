@@ -1,5 +1,4 @@
-# Xcode（工程由 gen_xcodeproj.py 生成）
-VoiceAIKitDemo.xcodeproj/
+# Xcode（VoiceAIKitDemo.xcodeproj 已入库，clone 后直接 pod install 即可）
 VoiceAIKitDemo.xcworkspace/
 build/
 DerivedData/
@@ -12,7 +11,6 @@ xcuserdata/
 
 # CocoaPods
 Pods/
-Podfile.lock
 
 # SDK（体积大，按需下载，见 VoiceAIKitDemo/Frameworks/README.md）
 VoiceAIKitDemo/Frameworks/*.xcframework/

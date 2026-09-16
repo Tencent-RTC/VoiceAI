@@ -3,9 +3,10 @@
 # https://cloud.tencent.com/document/product/647/137680
 #
 # 使用步骤：
-#   python3 gen_xcodeproj.py --use-pods
 #   pod install
 #   open VoiceAIKitDemo.xcworkspace
+#
+# 维护者：新增/删除 Swift 文件后执行 'python3 gen_xcodeproj.py' 并重新提交工程
 
 platform :ios, '16.0'
 use_frameworks!

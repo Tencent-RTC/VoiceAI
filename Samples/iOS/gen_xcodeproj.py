@@ -6,17 +6,27 @@
 
 VoiceAI SDK 两种接入方式（参考 https://cloud.tencent.com/document/product/647/137680）:
 
-  方式一 CocoaPods（官方推荐）:
-      python3 gen_xcodeproj.py --use-pods
+  方式一 CocoaPods（默认，仓库入库的工程即为此模式）:
       pod install
       open VoiceAIKitDemo.xcworkspace
     此模式生成的工程不手动嵌入 xcframework，改由 Podfile 中
     `pod 'TXLiteAVSDK_VoiceAI_iOS'` 负责链接。
 
-  方式二 手动引入 xcframework（默认）:
+  方式二 手动引入 xcframework:
       # 先将 TXLiteAVSDK_VoiceAI_iOS.xcframework 放到 VoiceAIKitDemo/Frameworks/
-      python3 gen_xcodeproj.py
+      python3 gen_xcodeproj.py --embed-framework
       open VoiceAIKitDemo.xcodeproj
+
+维护者须知:
+
+  VoiceAIKitDemo.xcodeproj 已入库，使用者无需执行本脚本。
+  新增 / 删除 / 重命名 Swift 文件后，重新执行本脚本并提交工程变更：
+
+      python3 gen_xcodeproj.py
+
+  CI 中可用 --check 校验入库工程是否为最新（非 0 退出表示过期）：
+
+      python3 gen_xcodeproj.py --check
 """
 
 import os
@@ -37,6 +47,7 @@ def walk_swift_files():
     for root, dirs, names in os.walk(SRC_ROOT):
         if "Frameworks" in dirs:
             dirs.remove("Frameworks")
+        dirs.sort()  # 排序保证多次生成结果一致，避免入库工程出现无意义 diff
         for n in sorted(names):
             if n.endswith(".swift"):
                 rel = os.path.relpath(os.path.join(root, n), SRC_ROOT)
@@ -395,13 +406,18 @@ def build_pbxproj(swift_files, assets_xcassets, embed_framework):
 
 
 def main():
-    use_pods = "--use-pods" in sys.argv[1:]
+    args = sys.argv[1:]
+    check = "--check" in args
+    # 默认 CocoaPods 模式；--embed-framework 切到手动嵌入 xcframework
+    # （--use-pods 保留为历史别名，等价于默认模式）
+    use_pods = "--embed-framework" not in args
     embed_framework = not use_pods
 
     swift_files = walk_swift_files()
     print(f"[gen_xcodeproj] 发现 {len(swift_files)} 个 Swift 源文件")
-    for f in swift_files:
-        print(f"  {f}")
+    if not check:
+        for f in swift_files:
+            print(f"  {f}")
 
     assets_xcassets = has_assets_xcassets()
     print(f"[gen_xcodeproj] Assets.xcassets: {'存在' if assets_xcassets else '未找到 (跳过)'}")
@@ -414,6 +430,19 @@ def main():
         print(f"[gen_xcodeproj] 接入方式: 手动嵌入 xcframework ({'已找到' if exists else '未找到，请放入 Frameworks/'})")
 
     pbxproj = build_pbxproj(swift_files, assets_xcassets, embed_framework)
+
+    if check:
+        if not os.path.isfile(PROJ_FILE):
+            print(f"[gen_xcodeproj] 未找到 {PROJ_FILE}，请先执行 'python3 gen_xcodeproj.py'")
+            return 1
+        with open(PROJ_FILE) as f:
+            current = f.read()
+        if current == pbxproj:
+            print("[gen_xcodeproj] 入库工程已是最新")
+            return 0
+        print("[gen_xcodeproj] 入库工程已过期，请执行 'python3 gen_xcodeproj.py' 并提交变更")
+        return 1
+
     os.makedirs(PROJ_DIR, exist_ok=True)
     with open(PROJ_FILE, "w") as f:
         f.write(pbxproj)
@@ -422,7 +451,8 @@ def main():
         print("[gen_xcodeproj] 后续: 运行 'pod install' 后使用 'open VoiceAIKitDemo.xcworkspace'")
     else:
         print(f"[gen_xcodeproj] 后续: 使用 'open {PROJ_DIR}' 在 Xcode 中打开")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

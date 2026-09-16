@@ -14,8 +14,9 @@ VoiceAIKitDemo/Frameworks/TXLiteAVSDK_VoiceAI_iOS.xcframework/
 放置完成后，在本目录（`Samples/iOS/`）执行：
 
 ```bash
-python3 gen_xcodeproj.py        # 不带 --use-pods：手动嵌入模式
+python3 gen_xcodeproj.py --embed-framework
 open VoiceAIKitDemo.xcodeproj
 ```
 
-> 该 xcframework 体积较大，已从 Git 中忽略（见 `.gitignore`），不会随仓库提交。
+> - 该 xcframework 体积较大，已从 Git 中忽略（见 `.gitignore`），不会随仓库提交。
+> - 仓库中入库的是 **CocoaPods 模式**的工程，本命令会把它改写成手动嵌入模式，仅用于本地验证，请勿提交。
