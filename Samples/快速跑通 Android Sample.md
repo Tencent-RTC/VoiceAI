@@ -107,3 +107,11 @@ VoiceAIKit/                       ← 本目录（Android 工程根）
 | 有文字回复但没声音 | 检查网络；确认音色 ID 是**云端在线音色**；确认标题栏「自动朗读」已开启 |
 | 切换音色后没变化 | 音色在**下次进入对话页**生效 |
 | 编译报 JDK 版本错误 | 需 JDK 17：`Android Studio → Settings → Gradle → Gradle JDK` |
+
+---
+
+## 6. 安全提示
+
+- `Config.java` 中的 **SecretKey 硬编码仅供调试**。正式版本请在服务端计算 UserSig 后下发，参考：[UserSig 官方文档](https://cloud.tencent.com/document/product/647/50686)。
+- **LLM API Key 同样不应打进 App**，生产环境请通过后端代理转发请求。
+- 提交前请确认没有把密钥写入版本库。

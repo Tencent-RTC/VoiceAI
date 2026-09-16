@@ -136,7 +136,7 @@ Samples/
 
 ## 7. 安全提示
 
-- `Config.swift` 中的 **SecretKey 硬编码仅供调试**。正式版本请在服务端计算 UserSig 后下发，参考：[UserSig 官方文档](https://cloud.tencent.com/document/product/269/32688)。
+- `Config.swift` 中的 **SecretKey 硬编码仅供调试**。正式版本请在服务端计算 UserSig 后下发，参考：[UserSig 官方文档](https://cloud.tencent.com/document/product/647/50686)。
 - **LLM API Key 同样不应打进 App**，生产环境请通过后端代理转发请求。
 - `.gitignore` 忽略 `Pods/`、`VoiceAIKitDemo.xcworkspace/` 与 SDK 二进制；`VoiceAIKitDemo.xcodeproj` 与 `Podfile.lock` 已入库，请确认提交前没有把密钥写入版本库。
 
