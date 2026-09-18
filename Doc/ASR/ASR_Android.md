@@ -77,12 +77,12 @@ repositories {
 在 `app/build.gradle` 中声明依赖（[SDK 插件地址](https://central.sonatype.com/artifact/com.tencent.liteav/LiteAVSDK_VoiceAI)，如需其它版本替换下方版本号即可）：
 ``` gradle
 dependencies {
-    implementation 'com.tencent.liteav:LiteAVSDK_VoiceAI:13.6.0.237'
+    implementation 'com.tencent.liteav:LiteAVSDK_VoiceAI:13.6.0.243'
 }
 ```
 
 #### 方式二：本地 AAR 引入
-1. [下载 SDK](https://dl.gmertc.com/voiceai/13.6.0/VoiceAI_Android_sdk_13.6.0.237.zip)，把 SDK 提供的 `LiteAVSDK_VoiceAI_x.x.x.x.aar`（或 `.so` + `jar`）放入 `app/libs`（`x.x.x.x` 为具体版本号）。
+1. [下载 SDK](https://dl.gmertc.com/voiceai/13.6.0/VoiceAI_Android_sdk_13.6.0.243.zip)，把 SDK 提供的 `LiteAVSDK_VoiceAI_x.x.x.x.aar`（或 `.so` + `jar`）放入 `app/libs`（`x.x.x.x` 为具体版本号）。
 
 2. 在 `app/build.gradle` 中声明：
 

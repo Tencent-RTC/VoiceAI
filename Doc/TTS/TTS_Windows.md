@@ -26,7 +26,7 @@
 
 ### 2.2 引入 SDK
 
-1. [下载 Windows SDK](https://dl.gmertc.com/voiceai/13.6.0/VoiceAI_Win_sdk_13.6.0.237.zip)，解压后得到头文件、`liteavsdk_voiceai.lib` 导入库与 `liteavsdk_voiceai.dll`。
+1. [下载 Windows SDK](https://dl.gmertc.com/voiceai/13.6.0/VoiceAI_Win_sdk_13.6.0.243.zip)，解压后得到头文件、`liteavsdk_voiceai.lib` 导入库与 `liteavsdk_voiceai.dll`。
 
 2. 头文件：将 SDK 的 `include` 目录加入工程**附加包含目录**，引入：
 

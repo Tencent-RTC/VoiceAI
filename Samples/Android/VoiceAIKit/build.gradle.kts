@@ -46,9 +46,9 @@ val useLocalVoiceAiSdk: Boolean = providers
 dependencies {
     if (useLocalVoiceAiSdk) {
         // 本地 aar：仓库根目录 libs/，经 settings.gradle.kts 的 flatDir 解析
-        api(":LiteAVSDK_VoiceAI_13.6.0.237@aar")
+        api(":LiteAVSDK_VoiceAI_13.6.0.243@aar")
     } else {
-        implementation("com.tencent.liteav:LiteAVSDK_VoiceAI:13.6.0.237")
+        implementation("com.tencent.liteav:LiteAVSDK_VoiceAI:13.6.0.243")
     }
 
     implementation("androidx.core:core-ktx:1.13.1")

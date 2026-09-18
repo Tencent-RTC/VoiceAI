@@ -13,7 +13,7 @@ use_frameworks!
 
 target 'VoiceAIKitDemo' do
   # 腾讯云 VoiceAI SDK（含实时 ASR / 在线 TTS）
-  pod 'TXLiteAVSDK_VoiceAI_iOS', '13.6.0.237'
+  pod 'TXLiteAVSDK_VoiceAI_iOS', '13.6.0.243'
 end
 
 post_install do |installer|

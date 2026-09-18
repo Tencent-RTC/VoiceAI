@@ -34,7 +34,7 @@
 在工程根目录执行以下命令从 [ohpm 仓库](https://ohpm.openharmony.cn/#/cn/detail/@tencentcloud%2Fliteavsdk_voiceai) 添加依赖：
 
 ```shell
-ohpm install @tencentcloud/liteavsdk_voiceai@13.6.0.237
+ohpm install @tencentcloud/liteavsdk_voiceai@13.6.0.243
 ```
 
 或在 `oh-package.json5` 中声明依赖后执行同步：
@@ -42,14 +42,14 @@ ohpm install @tencentcloud/liteavsdk_voiceai@13.6.0.237
 ```json5
 {
   "dependencies": {
-    "@tencentcloud/liteavsdk_voiceai": "^13.6.0.237"
+    "@tencentcloud/liteavsdk_voiceai": "^13.6.0.243"
   }
 }
 ```
 
 #### 方式二：本地 HAR 引入
 
-1. [下载 SDK](https://dl.gmertc.com/voiceai/13.6.0/VoiceAI_OHOS_sdk_13.6.0.237.zip)，将 SDK 提供的 HAR 包（LiteAVSDK_VoiceAI_x.x.x.x.har）加入工程依赖。
+1. [下载 SDK](https://dl.gmertc.com/voiceai/13.6.0/VoiceAI_OHOS_sdk_13.6.0.243.zip)，将 SDK 提供的 HAR 包（LiteAVSDK_VoiceAI_x.x.x.x.har）加入工程依赖。
 2. 在 `oh-package.json5` 中声明依赖后执行同步。
 
 #### 导入 API
